@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>School Portal</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header><h2>School Portal</h2></header>
+
+<div class="container">
+
+
+<div id="loginPage" class="card">
+    <h3>Login</h3>
+    <input id="Matric no" placeholder="Matric no">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="error"></p>
+</div>
+
+
+<div id="dashboard" class="hidden">
+
+<nav>
+    <button onclick="show('questions')">Practice</button>
+    <button onclick="show('gpa')">GPA</button>
+    <button onclick="show('timetable')">Timetable</button>
+    <button onclick="show('announcement')">Announcements</button>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+
+<div id="questions" class="card hidden">
+    <h3>Practice Quiz</h3>
+
+   
+    <button onclick="loadQuiz('math')">MTH 101</button>
+    <button onclick="loadQuiz('english')">English</button>
+    <button onclick="loadQuiz('python')">Python</button>
+    <button onclick="loadQuiz('js')">JavaScript</button>
+
+    <hr>
+
+    
+    <div id="quizContainer"></div>
+
+    <button onclick="submitQuiz()">Submit</button>
+    <p id="score"></p>
+</div>
+
+
+<div id="gpa" class="card hidden">
+    <h3>GPA Calculator</h3>
+    <input id="course1" placeholder="Course 1 Score">
+    <input id="course2" placeholder="Course 2 Score">
+    <input id="course3" placeholder="Course 3 Score">
+    <button onclick="calculateGPA()">Calculate GPA</button>
+    <p id="gpaResult"></p>
+</div>
+
+
+<div id="timetable" class="card hidden">
+    <h3>School Timetable</h3>
+    <table>
+        <tr><th>Day</th><th>Subjects</th></tr>
+        <tr><td>Monday</td><td>Gst112, Cos102,Vua-Sen104</td></tr>
+        <tr><td>Tuesday</td><td>Phy102, Cos102</td></tr>
+        <tr><td>Wednesday</td><td>Vua-Sen182, Vua-Cms142</td></tr>
+        <tr><td>Thursday</td><td>Vua-Sen-182</td></tr>
+        <tr><td>Friday</td><td>Mth102, Phy108,Vua-Sen104</td></tr>
+    </table>
+</div>
+
+
+<div id="announcement" class="card hidden">
+    <h3>Announcements</h3>
+    <ul id="news">
+        <li> Exams start next week</li>
+        <li> Submit assignments before Friday</li>
+    </ul>
+
+    <input id="newMsg" placeholder="New announcement">
+    <button onclick="addAnnouncement()">Add</button>
+</div>
+
+</div>
+</div>
+
+<!-- LINK JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
